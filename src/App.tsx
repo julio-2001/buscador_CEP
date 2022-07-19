@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {MainBC , TitleBC, InputBC, DivBC, DetailBC, UlBC, LiBC, IconeAreaButton }from './components/Main';
+import {MainBC , TitleBC, InputBC, DivBC, DetailBC, UlBC, LiBC, IconeAreaButton, LetterBC }from './components/Main';
 import CepInfo from './interfaces/Interface_API';
 import Service_API from './services/apiViaCep';
 
@@ -74,31 +74,31 @@ function App() {
 
           <UlBC>
             <LiBC>
-              CEP:{cep?.cep}
+              CEP: <LetterBC>{cep?.cep} </LetterBC> 
             </LiBC>
 
             <LiBC>
-              Localidade:{cep?.localidade}
+              Localidade: <LetterBC>{cep?.localidade} </LetterBC>
             </LiBC>
 
             <LiBC>
-              UF:{cep?.uf}
+              UF: <LetterBC>{cep?.uf}  </LetterBC>
             </LiBC>
 
             <LiBC>
-              DDD:{cep?.ddd }
+              DDD: <LetterBC>{cep?.ddd } </LetterBC>
             </LiBC>
 
             <LiBC>
-              Bairro: {cep?.bairro}
+              Bairro: <LetterBC>{cep?.bairro}</LetterBC>
             </LiBC>
 
             <LiBC>
-              Logradouro:{cep?.logradouro}
+              Logradouro:<LetterBC>{cep?.logradouro}</LetterBC>
             </LiBC>
 
             <LiBC>
-              Complemento: {cep?.complemento || "Sem complemento" }
+              Complemento: <LetterBC>{cep?.complemento || "Sem complemento" }</LetterBC>
             </LiBC>
           </UlBC>
         

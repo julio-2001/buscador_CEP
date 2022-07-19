@@ -5,13 +5,32 @@ const MainBC = Styled.main`
 
     width:100%;
     height:100vh;
-    background:black;
+
+    
+    
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction:column;
-    overflow:scroll;
-    /* transition:1s; */
+    overflow:visible;
+    
+    background:linear-gradient(-45deg , #3C7A6F, #3B6E67, #324251, #2E2B40, #25192F, #25192F,#180F20);
+    background-size:300% 300%;
+    animation:aniBG 10s ease-in-out  infinite;
+
+    @keyframes aniBG{
+        0%{
+            background-position:0 50%;
+        }
+        50%{
+            background-position:100% 50%;
+        }
+        100%{
+            background-position:0 50%;
+        }
+
+
+    }
 
     //TODO adicionar animação de background
 `;
@@ -22,6 +41,13 @@ const TitleBC = Styled.h1`
     font-weight:700;
     color:white;
     display:flex;
+    animation:Title 1s ease-in-out alternate infinite;
+
+    @keyframes Title{
+        to{
+            transform:translateY(5px);
+        }
+    }
 
     //TODO colocar animação de flutuação
 `;
@@ -113,8 +139,9 @@ const LiBC = Styled.li`
 
 `;
 
-const letter = Styled.span`
-    color:;
+const LetterBC = Styled.span`
+    color:red;
+    font-weight:700;
 `;
 
-export {MainBC ,TitleBC, InputBC,DivBC, IconeAreaButton, DetailBC, UlBC, LiBC};
+export {MainBC ,TitleBC, InputBC,DivBC, IconeAreaButton, DetailBC, UlBC, LiBC, LetterBC };
