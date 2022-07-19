@@ -22,11 +22,11 @@ function App() {
 
     try{
       const response = await Service_API(`${input}/json`)
-      const object:CepInfo = response.data
-      cepState(object)
-      
-      console.log(response.data)
+      const objectCep:CepInfo = response.data
+      cepState(objectCep)
       setInput("")
+      console.log(response.data)
+      
 
       
 
@@ -69,11 +69,10 @@ function App() {
           </IconeAreaButton>
         </DivBC>
 
-
+        
         <DetailBC>
 
           <UlBC>
-
             <LiBC>
               CEP:{cep?.cep}
             </LiBC>
@@ -101,10 +100,10 @@ function App() {
             <LiBC>
               Complemento: {cep?.complemento || "Sem complemento" }
             </LiBC>
-
           </UlBC>
         
         </DetailBC>
+        
 
       </MainBC>
     </div>

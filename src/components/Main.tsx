@@ -113,4 +113,8 @@ const LiBC = Styled.li`
 
 `;
 
+const letter = Styled.span`
+    color:;
+`;
+
 export {MainBC ,TitleBC, InputBC,DivBC, IconeAreaButton, DetailBC, UlBC, LiBC};
