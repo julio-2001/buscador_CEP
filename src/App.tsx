@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import {MainBC , TitleBC, InputBC, DivBC, IconeArea, DetailBC, UlBC, LiBC }from './components/Main';
+import {MainBC , TitleBC, InputBC, DivBC, DetailBC, UlBC, LiBC, IconeAreaButton }from './components/Main';
+import CepInfo from './interfaces/Interface_API';
+import Service_API from './services/apiViaCep';
 
 //Icone da lupa
 import {BsSearch} from "react-icons/bs"
@@ -7,6 +9,36 @@ import {BsSearch} from "react-icons/bs"
 
 function App() {
   const [input, setInput] = useState("")
+  const [cep, cepState] =  useState<CepInfo>() 
+  
+  
+
+  async function HandleSubimit(){
+    
+    if(input === ''){
+      alert("Digite um CEP")
+      return
+    }
+
+    try{
+      const response = await Service_API(`${input}/json`)
+      const object:CepInfo = response.data
+      cepState(object)
+      
+      console.log(response.data)
+      setInput("")
+
+      
+
+
+    }catch{
+      alert("ALgo deu errado, Reveja os campos")
+      setInput("")
+    }
+  }
+
+
+
   return (
 
     <div className="App">
@@ -30,10 +62,11 @@ function App() {
             required
           />
 
-          <IconeArea>
+          <IconeAreaButton
+          onClick={HandleSubimit}>
             <BsSearch
             size={25}/>
-          </IconeArea>
+          </IconeAreaButton>
         </DivBC>
 
 
@@ -42,34 +75,32 @@ function App() {
           <UlBC>
 
             <LiBC>
-              CEP:06447320
+              CEP:{cep?.cep}
             </LiBC>
 
             <LiBC>
-              Localidade: São paulo
+              Localidade:{cep?.localidade}
             </LiBC>
 
             <LiBC>
-              UF:SP
+              UF:{cep?.uf}
             </LiBC>
 
             <LiBC>
-              DDD:11
+              DDD:{cep?.ddd }
             </LiBC>
 
             <LiBC>
-              Bairro: Jardim julio
+              Bairro: {cep?.bairro}
             </LiBC>
 
             <LiBC>
-              Logradouro:avenida mina
+              Logradouro:{cep?.logradouro}
             </LiBC>
 
             <LiBC>
-              Complemento: Sem complemento
+              Complemento: {cep?.complemento || "Sem complemento" }
             </LiBC>
-
-
 
           </UlBC>
         

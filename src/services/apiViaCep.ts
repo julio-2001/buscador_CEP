@@ -5,3 +5,5 @@ const Service_API = Axios.create({
 
     baseURL:"https://viacep.com.br/ws/"
 })
+
+export default Service_API;

@@ -1,4 +1,3 @@
-import React from "react";
 import Styled from "styled-components"
 
 //Corpo principal da pagina
@@ -38,16 +37,17 @@ const InputBC = Styled.input`
     text-align:center;
     font-size:1.5em;
     color:white;
+    transition:.8s;
+
 
     &:invalid{
         border:2px solid red;
     }
 
+
     &::placeholder{
         color:white;
     }
-
-
 `;
 
 //Aqui são as divições
@@ -61,7 +61,7 @@ const DivBC = Styled.div`
 `;
 
 //Botao
-const IconeArea = Styled.button`
+const IconeAreaButton = Styled.button`
     border:none;
     outline:none;
     border-radius:5px;
@@ -113,4 +113,4 @@ const LiBC = Styled.li`
 
 `;
 
-export {MainBC ,TitleBC, InputBC,DivBC, IconeArea, DetailBC, UlBC, LiBC};
+export {MainBC ,TitleBC, InputBC,DivBC, IconeAreaButton, DetailBC, UlBC, LiBC};
