@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/buscador_CEP/static/css/main.5e41044a.css",
+    "main.js": "/buscador_CEP/static/js/main.e8e28b3b.js",
+    "index.html": "/buscador_CEP/index.html",
+    "main.5e41044a.css.map": "/buscador_CEP/static/css/main.5e41044a.css.map",
+    "main.e8e28b3b.js.map": "/buscador_CEP/static/js/main.e8e28b3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e41044a.css",
+    "static/js/main.e8e28b3b.js"
+  ]
+}
